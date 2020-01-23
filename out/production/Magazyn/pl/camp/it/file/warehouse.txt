@@ -1,0 +1,5 @@
+Products{category='NO CATEGORY', name='banany', price='3.45', kod='1111111111111', date='23-01-2020', time='22:23:55'}
+Products{category='ALKOHOL', name='wino', price='23.45', kod='2039485783291', date='23-01-2020', time='22:24:33'}
+Products{category='PIECZYWO', name='chleb żytni', price='4.50', kod='2222222222222', date='23-01-2020', time='22:43:49'}
+Products{category='RTV', name='telewizor', price='999.99', kod='1234567890123', date='23-01-2020', time='23:00:53'}
+Products{category='ALKOHOL', name='piwo', price='4.50', kod='1111111111111', date='23-01-2020', time='23:18:18'}
