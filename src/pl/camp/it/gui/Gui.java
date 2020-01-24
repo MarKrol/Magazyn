@@ -1,12 +1,17 @@
 package pl.camp.it.gui;
 
 import pl.camp.it.database.DataBase;
+import pl.camp.it.login.Login;
+import pl.camp.it.sort.*;
 import pl.camp.it.database.SupportDateBase;
 import pl.camp.it.file.SupportFile;
 
+import java.net.CookieHandler;
+import java.util.Collections;
 import java.util.Scanner;
 
-public class Gui {
+public class Gui{
+
     private Gui() {
     }
 
@@ -39,7 +44,7 @@ public class Gui {
         System.out.println("12. Zmień kolor wyświetlanego tekstu");
         System.out.println("13. Zmień dane do logowania");
         System.out.println("************************************************************************");
-        System.out.println("14. Wyjście z programu");
+        System.out.println("14. Powrót do menu logowania");
         System.out.println("************************************************************************");
 
         System.out.print("\nPodaj numer wybranej opcji: ");
@@ -90,18 +95,21 @@ public class Gui {
                     SupportDateBase.getSupportDateBase().supportFindCategory();
                     break;
                 case "11":
-
+                    SupportSortGui.getSupporSortGui().selectSort();
                     break;
                 case "12":
-
+                    ColorFont.selectColorFont();
                     break;
                 case "13":
-
+                    Login.getLogin().changeDataToLogin();
                     break;
                 case "14":
                     SupportFile.getSupportFile().writeToFileAllProducts();  //Zapisanie do pliku produktów z listy
                     SupportFile.getSupportFile().writeToFileCategory();     //Zapisanie do pliku kategorii z listy
-                    System.out.println("Zakończono działanie programu!!!");
+                    DataBase.getDatabase().getProductsList().clear();
+                    DataBase.getDatabase().getCategoriesList().clear();
+                    DataBase.getDatabase().getCategoriesList().add("NO CATEGORY");
+                    System.out.println("Nastąpił powrót do menu logowania!!! ");
                     exit = true;
                     break;
                 default:
